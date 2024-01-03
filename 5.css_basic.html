@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS BASIC</title>
+    
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        p{
+            background-color: cadetblue;
+            /* 텍스트 디자인 */
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .bigtext{
+            font-size: 24px;
+        }
+        .relativetext{
+            /* 기준은 부모 태그의 필셀 기준으로. */
+            font-size: 120%;
+        }
+        .em_parent{
+            font-size: 20px;
+        }
+        .em_child{
+            font-size: 1.5em;
+        }
+        .percent_parent{
+            font-size: 20px;
+        }
+        .percent_child{
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <h2><b>CSS BASIC</b></h2>
+    <p>hello java</p>
+    <p class="italic bigtext">font style 과 font size 중첩적용 1</p>
+    <p class="italic relativetext">font style 과 font size 중첩적용 2</p>
+
+    <!-- em percent비교 웹에서는 상관 없는데 모바일 환경에서는 중요하다 -->
+    <div class="em_parent">
+        <div class="em_child">
+            이 텍스트는 부모 글꼴의 1.5배크기의 글꼴입니다. 
+        </div>
+    </div>
+
+    <div class="percent_parent">
+        <div class="percent_child">
+            이 텍스트는 부모 글꼴의 150%크기의 글꼴입니다.
+        </div>
+    </div>
+
+    <div style="border: 3px solid black; padding: 15px; margin: 20px;">
+        margin, border, padding을 가진 요소
+    </div>
+
+    <div style="padding-left: 20px;">
+        padding만을 가진 텍스트입니다.
+    </div>
+
+    <div>
+        <table border= "2" style="text-align: center;color: black; border-collapse: collapse ;margin: auto">
+            <thead>
+                <tr>
+                    <td>중식</td>
+                    <td>한식</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>짬뽕</td>
+                    <td>보쌈</td>
+                </tr>
+                <tr>
+                    <td>탕탕탕탕수우우육</td>
+                    <td>칼국수</td>
+                </tr>
+                <tr>
+                    <td>울면</td>
+                    <td>햄버거</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <table border= "1" style="display: inline-block;text-align: center;color: black; border-collapse: collapse ;">
+            <thead>
+                <tr>
+                    <td>중식</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>짬뽕</td>
+                </tr>
+                <tr>
+                    <td>탕탕탕탕수우우육</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
