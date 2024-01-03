@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML BASIC 2</title>
+</head>
+<body>
+    <h2>회원가입 폼 예제</h2>
+    <!-- form을 통한 전송의 기본 인코딩은 application/x-www-form-urlencoded (url 인코딩 형식)-->
+    <!-- form을 통한 파일 전송을 포함하는 인코딩은 multipart/form-data -->
+    <!-- 보내는 목적지 주소, 어떤 프로토콜을 사용할지 명시 -->
+    <form action="https://naver.com" method="post" enctype="multipart/form-data">
+        <!-- id와 label문의 for와 일치관계 -->
+        <label for="username">이름을 입력하세요.</label>
+        <br>
+                                        <!-- 서버로 넘어가는 값의 이름 -->                                           <!--수정을 못하게 함-->
+        <input type="text" id = "username" name="username" maxlength="10" size="5" value ="침착맨" style="color:gray;" readonly disabled>
+        <br>
+        <label for="email">email 을 입력하세요.</label>
+        <br>
+                <!-- email 타입도 존재 -->
+        <input type="text" id="email" name="email" maxlength="20" size="20">
+        <p>
+            <label for="password">password 을 입력하세요.</label>
+            <input type="password" id="password" name="password" maxlength="20" size="20">
+        </p>
+        <p>
+            <label>gender</label>                       
+                                                    <!-- 서버로 넘어가는 value -->
+            <input type="radio" name="gender" value="Male"> Male
+                                                            <!-- defalut값 셋팅  -->
+            <input type="radio" name="gender" value="Female" checked> Female
+        </p>
+        <p>
+            <label>hobby</label>                       
+            <input type="checkbox" name="hobby" value="Male"> sports
+            <input type="checkbox" name="hobby" value="Female"> book
+            <input type="checkbox" name="hobby" value="Female"> music
+        </p>
+        <p>
+            <label>birthday</label>                       
+            <input type="datetime-local" name="birthday"> birthday
+        </p>
+        <p>
+            <label>age</label>                       
+            <input type="number" name="age"> age
+        </p>
+        <p>
+            <label>role</label>                       
+            <select name="userInfo">
+                <option value="user">user</option>
+                <option value="vister">vister</option>
+                <option value="master">master</option>
+            </select>
+        </p>
+        <p>
+            <label>color</label>                       
+            <input type="color" name="color"> color
+        </p>
+        <!-- 파일 업로드 시 별도의 폼데이터 인코딩을 지정해줘야함 -->
+        <p>
+            <label>upload Img</label>              
+                                    <!-- 특정 파일만 업로드 가능하게 한다  -->
+            <input type="file" name="image" accept="image/*"> 
+        </p>
+        <p>
+            <label for="resume">PR</label> 
+            <br>                      
+            <textarea id="resume" name="resume" rows="5" cols="30" placeholder="hello!!!"> 
+            </textarea>
+        </p>
+
+        <input type="submit" value="finsh"> 
+        <!-- input tag를와 button tag 둘 다 종종 사용한다 -->
+        <!-- <button type="submit"> finsh~</button> -->
+    </form>
+</body>
+</html>
