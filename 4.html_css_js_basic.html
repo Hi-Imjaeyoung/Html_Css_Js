@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_CSS_JS BASIC</title>
+    <link rel="stylesheet" href="./css/my_style.css">
+    <!-- 부트스트랩 버튼 클래스 찾기 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        /* 태그 선택 */
+        p{
+         color: ivory;
+         text-align: center;
+         text-decoration: underline;   
+        }
+        h2{
+            color: whitesmoke;
+        }
+        /* 클래스 선택 */
+        .paras{
+            color: rgb(197, 196, 194);
+            text-align: center;
+            text-decoration:line-through;   
+        }
+        #para{
+            color: white;
+            text-align: center;
+            text-decoration:underline;  
+        }
+        /* 자손 선택자 */
+        div p{
+            color: blueviolet;
+        }
+        /* 자식 선택자 */
+        div > h5{
+            color: goldenrod;
+        }
+    </style>
+    <!-- 이 시점에서는 road1이라는 코드가 없다 -->
+    <script>
+        // 구문은 함수 정의 없이 바로 실행
+        document.getElementById("load1").innerHTML = "chang1";
+        // 함수를 정의, 호출은 별도
+        function updateDemo1(){
+            document.getElementById("update").innerHTML = "변경한 p태그 내용";
+        }
+    </script>
+</head>
+<body style="background-color: darkslategray;">
+    <h2>HTML_CSS_JS BASIC</h2>
+
+    <!-- 인라인 스타일 적용 -->
+    <p style="text-align: center; color: greenyellow; font-size: 30px; text-decoration: underline;"><b>인라인스타일 적용</p>
+    <!-- 내부 스타일 적용 -->
+     
+    <!-- 태그 선택자 -->
+    <p> 태그 선택자 적용 </p>
+    <!-- 클래스 선택자 -->
+    <p class="paras">클래스 선택자 1</p>
+    <p class="paras">클래스 선택자 2</p>
+    <!-- 아이디 선택자 -->
+    <p id="para">아이디 선택자</p>
+
+    <!-- 외부스타일 적용 -->
+    <p id="external">외부스타일 적용</p>   
+
+    <!-- 자손 선택자 -->
+    <div>
+        <h2>자손 선택자 예시</h2>
+        <p>첫번째 단락</p>
+        <section>
+            <p>두번째 단락</p>
+        </section>
+    </div>
+
+    <!-- 자식 선택자  -->
+    <div>
+        <h2>자식 선택자 예시</h2>
+        <h5>첫번째 단락</h5>
+        <section>
+            <h5>두번째 단락</h5>
+        </section>
+    </div>
+
+    <h2> javascript 예시</h2>
+    <p id="load1">
+        js 로드 순서1
+    </p>
+    <p id="load2">
+        js 로드 순서2
+    </p>
+    <script>
+        document.getElementById("load2").innerHTML = "chang2";
+    </script>
+
+    <p id="update">변경될 n태그 내용</p>
+    <!-- click이 trigger로 역할한다. -->
+    <button onclick="updateDemo1()">내용 변경</button>
+
+    <!-- 외부 script로 정의 -->
+    <p id="update2">집가면 공부해야지</p>
+    <button type="button" class="btn btn-primary" onclick="updateDemo2()">속마음은?</button>
+
+    <script src="./js/myJs.js"></script>
+
+</body>
