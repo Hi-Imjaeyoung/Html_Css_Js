@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title>>
     <script>
         function variableConsole1(){
             var x = 10;
@@ -27,17 +27,72 @@
             arr2.map(a=>a*2).forEach(a=>console.log(a));
         }
         function variableConsole3(){
-            var arr = [10,20,function(a){console.log('hello world'+a);},30];
+            var arr = [10,20,(a)=>{console.log('hello world'+a);},30];
             arr[2](1);
         }
+        function varExample(){
+            // var는 같은 변수명에 재선언과 재할당 가능
+            var x = 10;
+            var x = 20; 
+            console.log(x);
+        }
+        // let과 const를 사용하는 것을 권장 
+        function letExample(){
+            // let은 같은 변수명에 재할당만 가능!
+            let x = 10;
+            // let x = 20;
+            x = 20;
+            console.log(x);
+        }
+        function constExample(){
+            // const는 변수명에 재선언과 재할당 불가능
+            const x = 10;
+            // x = 20; 런타임 에러
+            // const x = 20;
+            console.log(x);
+        }
+        function changeTextById(){
+            document.getElementById("change1").innerHTML='응 집갈거야~';
+            document.getElementById("change1").style.fontSize = '30px';
+        }
+        function changeTextByClass(){
+            var arr = document.getElementsByClassName('class1');
+            for(i =0;i<arr.length;i++){
+                arr[i].innerHTML='빠 집(빠른 집)';
+                arr[i].style.fontSize = '30px';
+                arr[i].style.color ='blue';
+            } 
+        }
+        function changeTextByTag(){
+            var arr = document.getElementsByTagName('p');
+            for(i =0;i<arr.length;i++){
+                arr[i].innerHTML='바 집(바로 집)';
+                arr[i].style.fontSize = '5px';
+                arr[i].style.color ='blue';
+            } 
+        }
+
     </script>
 </head>
 <body>
     <h2>JS 변수와 출력</h2>
     <button onclick="variableConsole1()"> console에 변수 추가 하기</button>
-
     <button onclick="variableConsole2()"> console2</button>
-
     <button onclick="variableConsole3()"> console3</button>
+
+    <h2>JS 변수 선언 키워드</h2>
+    <button onclick="varExample()">varExample</button>
+    <button onclick="letExample()"> letExample</button>
+    <button onclick="constExample()"> constExample</button>
+
+    <h2>tag선택 class선택 id 선택</h2>
+    <p id="change1">
+    <button onclick="changeTextById()">changeTextById</button>
+    오늘 남아서 공부 할까?</p>
+    <p class="class1">진짜 공부할까</p>
+    <p class="class1">진짜로 
+        <button onclick="changeTextByClass()"> changeTextByClass</button>
+    </p>
+    <button onclick="changeTextByTag()"> changeTextByTag</button>
 </body>
 </html>
