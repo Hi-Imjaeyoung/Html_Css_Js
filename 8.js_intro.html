@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function variableConsole1(){
+            var x = 10;
+            var y = '10';
+            console.log(x+y); 
+        }
+        function variableConsole2(){
+            var arr = [1,2,"실화야?","2"];
+            var total = 0;
+            var arr2 = [10,20,30,40];
+            for(i=0;i<arr2.length;i++){
+                total += arr2[i];
+            }
+            // print by console
+            console.log('total : '+ total);
+            // print by popup : 확인 버튼 누르기 전까지 이후 코드 실행이 멈춤.
+            // window 생략 가능
+            window.alert('total : '+ total);
+            // document.write : html화면에 바로 출력 (아무도 안쓰쥬)
+            //document.write('total : '+ total);
+            arr2.map(a=>a*2).forEach(a=>console.log(a));
+        }
+        function variableConsole3(){
+            var arr = [10,20,function(a){console.log('hello world'+a);},30];
+            arr[2](1);
+        }
+    </script>
+</head>
+<body>
+    <h2>JS 변수와 출력</h2>
+    <button onclick="variableConsole1()"> console에 변수 추가 하기</button>
+
+    <button onclick="variableConsole2()"> console2</button>
+
+    <button onclick="variableConsole3()"> console3</button>
+</body>
+</html>
