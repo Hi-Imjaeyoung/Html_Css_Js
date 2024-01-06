@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js callback </title>
+    <script>
+        // 콜백함수 없음
+        function callbackEx1(){
+            alert("Hello");
+        }
+        function callbackEx2(){
+            processUserInput((name)=>console.log("안녕하세여 "+name +" 님"));
+        }
+        function callbackEx3(){
+            processUserInput((name)=>alert("안녕하세여 "+name +" 님"));
+        }
+        // function myCallback1(name){
+        //     console.log("안녕하세여 "+name +" 님");
+        // // }
+        // function myCallback2(name){
+        //     alert("안녕하세여 "+name +" 님");
+        // }
+        function processUserInput(callback){
+            let name = prompt("이름을 입력해주세요");
+            callback(name);
+        }
+
+        // 완전히 동기적으로 콜백함수가 실행되고 있다. 
+        function callbackEx4(){
+            const numbers =[1,2,3,4,5];
+            numbers.forEach(a=>console.log(a));
+        }
+        
+        function callbackEx5(){
+            // setTimeOut 함수는 js의 대표적인 비동기 함수이다.(콜백함수처리함수)
+            // 그외에 네트워크작업을 수행하는 많은 함수가 비동기함수로 설계
+            setTimeout(()=>console.log("hello world 1"),2000);
+            console.log("hello world 2");
+            setTimeout(()=>console.log("hello world 3"),2000);
+            console.log("hello world 4");
+        }
+       
+    </script>
+</head>
+<body>
+    <h2>call back function</h2>
+    <button onclick="callbackEx1()">nomarl Function Ex1</button>
+    <button onclick="callbackEx2()">call back function Ex2</button>
+    <button onclick="callbackEx3()">call back function Ex3</button>
+    <button onclick="callbackEx4()">call back function Ex4</button>
+    <button onclick="callbackEx5()">call back function Ex5</button>
+</body>
+</html>

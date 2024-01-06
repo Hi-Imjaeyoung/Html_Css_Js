@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async await</title>
+    <!-- jquery import -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- axios import -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        async function callBackImp(){
+            try{
+                const response1 = await  $.ajax({
+                                        url :'https://jsonplaceholder.typicode.com/posts/1',
+                                        type : "GET",
+                                        dataType : 'json'});
+                console.log("ajax : ");
+                console.log(response1);
+                // const response2 = await  $.ajax({
+                //                             url :'https://naver.com',
+                //                             method : "POST",
+                //                             dataType : 'json',
+                //                             data : response1})
+                // console.log(response2);
+                // const response3 = await  $.ajax({
+                //                             url :'https://daum.com',
+                //                             method : "POST",
+                //                             dataType : 'json',
+                //                             data : response2})
+                // console.log(response3);
+            }catch(e){
+                console.log(e);
+            }
+            try{
+                const response4 = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+                console.log("axios : "+response4);
+                console.log(response4);
+            }catch(e){
+                console.log(e);
+            }
+        }
+
+        // 문서가 다 로드되면!
+        // $(document).ready(()=>{
+        //     $.ajax({
+        //         url :'https://jsonplaceholder.typicode.com/posts/1',
+        //         type : "GET",
+        //         dataType : 'json',
+        //         // 성공하면!
+        //         success: function(response){
+        //             console.log(response);
+        //             $.ajax({
+        //                 url :'https://naver.com',
+        //                 method : "POST",
+        //                 dataType : 'json',
+        //                 data : response,
+        //                 // 성공하면!
+        //                 success: function(response2){
+        //                     console.log(response2);
+        //                     $.ajax({
+        //                         url :'https://daum.com',
+        //                         method : "POST",
+        //                         dataType : 'json',
+        //                         data : response,
+        //                         // 성공하면!
+        //                         success: function(response3){
+        //                             console.log(response3);
+                                    
+        //                         },
+        //                         // 실패하면ㅠ 
+        //                         error: function(e){
+        //                             //console.log(e);
+        //                         }
+        //                     })
+        //                 },
+        //                 // 실패하면ㅠ 
+        //                 error: function(e){
+        //                     //console.log(e);
+        //                 }
+        //             })
+        //         },
+        //         // 실패하면ㅠ 
+        //         error: function(e){
+        //             //console.log(e);
+        //         }
+        //     })
+        // })
+        callBackImp();
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback hell</title>
+    <!-- jquery import -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <!-- axios import -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body> 
+    <script>
+        // 문서가 다 로드되면!
+        $(document).ready(()=>{
+            $.ajax({
+                url :'https://jsonplaceholder.typicode.com/posts/1',
+                type : "GET",
+                dataType : 'json',
+                // 성공하면!
+                success: function(response){
+                    console.log(response);
+                    $.ajax({
+                        url :'https://naver.com',
+                        method : "POST",
+                        dataType : 'json',
+                        data : response,
+                        // 성공하면!
+                        success: function(response2){
+                            console.log(response2);
+                            $.ajax({
+                                url :'https://daum.com',
+                                method : "POST",
+                                dataType : 'json',
+                                data : response,
+                                // 성공하면!
+                                success: function(response3){
+                                    console.log(response3);
+                                    
+                                },
+                                // 실패하면ㅠ 
+                                error: function(e){
+                                    //console.log(e);
+                                }
+                            })
+                        },
+                        // 실패하면ㅠ 
+                        error: function(e){
+                            //console.log(e);
+                        }
+                    })
+                },
+                // 실패하면ㅠ 
+                error: function(e){
+                    //console.log(e);
+                }
+            })
+        })
+    </script>
+</body>
+</html>
